@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Arapey&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <link rel="icon" type="image/png" href="../images/dice-6.png" />
+    <title>Dice Master</title>
+</head>
+
+<body>
+
+    <main class="container" role="main">
+        <h1>Dice-Master</h1>
+        <div class="rules container_card">
+            <h2>Régles</h2>
+            <p class="rules_text">
+                Chaque joueur possède un score temporaire (ROUND) et un score global (GLOBAL).
+                À chaque tour, le joueur a son ROUND initialisé à 0 et peut lancer un dé autant de fois qu'il le
+                souhaite. Le
+                résultat d’un lancer est ajouté au ROUND.
+                Lors de son tour, le joueur peut décider à tout moment de:
+                - Cliquer sur l’option “Hold”, qui permet d’envoyer les points du ROUND vers le GLOBAL. Ce sera alors le
+                tour de l’autre joueur.
+                - Lancer le dé. S’il obtient un 1, son score ROUND est perdu et c’est la fin de son tour.
+                Le premier joueur qui atteint les 100 points sur global gagne le jeu.
+                Cliquez sur le dès pour le lancer</p>
+            <button class="newGameBtn btn">Nouvelle partie</button>
+        </div>
+        <div class="names container_card">
+            <h2>Choix des pseudos</h2>
+            <form>
+                <fieldset>
+                    <legend>Joueur N°1</legend>
+                    <label for="playerOne">Choix du pseudo joueur N°1 :</label>
+                    <input type="text" id="playerOne" name="playerOne" value="Joueur 1">
+                </fieldset>
+                <fieldset>
+                    <legend>Joueur N°2</legend>
+                    <label for="playerTwo">Choix du pseudo joueur N°2 :</label>
+                    <input type="text" id="playerTwo" name="playerTwo" value="Joueur 2">
+                </fieldset>
+            </form>
+
+            <button class="startGame btn">Lancer la partie</button>
+        </div>
+
+        <div class="game container_card">
+            <div class="playerOneControl">
+                <div class="playerOneName"></div>
+                <div>Total Score : </div>
+                <div class="playerOneTotalScore"></div>
+                <div>Current-Score : </div>
+                <div class="playerOneCurrentScore"></div>
+            </div>
+            <div class="panelControl">
+                <img src="./images/dice-1.png" alt="dès" class="dice">
+                <div>
+                    <button class="btn holdBtn">Hold</button>
+                    <button class="btn launchDiceBtn">Lancer le dès</button>
+                    <button class="btn resetGameBtn">Nouvelle partie</button>
+                </div>
+            </div>
+
+            <div class="playerTwoControl">
+                <div class="playerTwoName"></div>
+                <div>Total Score : </div>
+                <div class="playerTwoTotalScore"></div>
+                <div>Current-Score : </div>
+                <div class="playerTwoCurrentScore"></div>
+
+
+            </div>
+
+        </div>
+        <div class="victory container_card">
+            <div class="victoryContent"></div>
+            <button class="endGameBtn btn">Nouvelle partie</button>
+        </div>
+
+    </main>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
